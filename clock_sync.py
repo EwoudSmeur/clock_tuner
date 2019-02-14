@@ -47,8 +47,8 @@ plt.show()
 freq1 = 1 / ((peaks[-1] - peaks[0])/fs / (len(peaks)-1))
 freq2 = 1 / ((peaks[-2] - peaks[0])/fs / (len(peaks)-2))
 
-print('frequency:', freq1)
+print('frequency:', freq1, 'Hz')
 print('ticks per hour:', freq1*60*60)
-print('error per day:', (1/target_frequency - 1/freq1) * 3600*24, '(- behind, + ahead)')
-print('off beat:', (1/min(freq1,freq2) - 1/max(freq1,freq2)) * 1000)
+print('error per day:', (1/target_freq - 1/freq1) * 3600*24, 'seconds (- behind, + ahead)')
+print('off beat:', (1/min(freq1,freq2) - 1/max(freq1,freq2)) * 1000, 'ms')
 
